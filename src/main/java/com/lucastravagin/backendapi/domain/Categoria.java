@@ -2,12 +2,23 @@ package com.lucastravagin.backendapi.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Categoria implements Serializable {
 	// versão da classe
 	private static final long serialVersionUID = 1L;
 	
+	//Estratégias de Geração automática dos ID
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+
 	private int id;
 	private String nome;
+	
 	
 	//Método Construtor
 	public Categoria() {	
